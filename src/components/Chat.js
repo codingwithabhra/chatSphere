@@ -4,7 +4,7 @@ import axios from "axios";
 import MessageList from "./MessageList";
 import "./chat.css";
 
-const socket = io("http://localhost:5001");
+const socket = io("https://chat-sphere-backend.vercel.app/");
 
 export const Chat = ({ user }) => {
   const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ export const Chat = ({ user }) => {
     // Fetch all users excluding the current user
     const fetchUsers = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5001/users", {
+        const { data } = await axios.get("https://chat-sphere-backend.vercel.app/users", {
           params: { currentUser: user.username },
         });
         setUsers(data);
@@ -41,7 +41,7 @@ export const Chat = ({ user }) => {
 
   const fetchMessages = async (receiver) => {
     try {
-      const { data } = await axios.get("http://localhost:5001/messages", {
+      const { data } = await axios.get("https://chat-sphere-backend.vercel.app/messages", {
         params: { sender: user.username, receiver },
       });
       setMessages(data);
