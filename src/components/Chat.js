@@ -4,7 +4,11 @@ import axios from "axios";
 import MessageList from "./MessageList";
 import "./chat.css";
 
-const socket = io("https://chatsphere-backend-production-dd8b.up.railway.app/");
+//correction made
+const socket = io("https://chatsphere-backend-production-dd8b.up.railway.app", {
+  transports: ["websocket", "polling"],
+  withCredentials: true
+});
 
 export const Chat = ({ user }) => {
   const [users, setUsers] = useState([]);
@@ -70,9 +74,8 @@ export const Chat = ({ user }) => {
         {users.map((u) => (
           <div
             key={u._id}
-            className={`chat-user ${
-              currentChat === u.username ? "active" : ""
-            }`}
+            className={`chat-user ${currentChat === u.username ? "active" : ""
+              }`}
             onClick={() => fetchMessages(u.username)}
           >
             {u.username}
