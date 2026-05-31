@@ -71,7 +71,7 @@ export const Chat = ({ user }) => {
       <h2>Welcome, {user.username}</h2>
       <div className="chat-list">
         <h3>Chats</h3>
-        {users.map((u) => (
+        {users?.map((u) => (
           <div
             key={u._id}
             className={`chat-user ${currentChat === u.username ? "active" : ""

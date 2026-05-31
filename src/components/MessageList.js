@@ -3,7 +3,7 @@ import React from "react";
 const MessageList = ({ messages, user }) => {
   return (
     <div className="message-list">
-      {messages.map((msg, index) => (
+      {messages?.map((msg, index) => (
         <div
           key={index}
           className={`message ${
