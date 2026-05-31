@@ -8,7 +8,7 @@ const Register = ({ setUser }) => {
 
   const handleRegister = async () => {
     try {
-      const { data } = await axios.post("https://chat-sphere-backend.vercel.app/auth/register", {
+      const { data } = await axios.post("https://chatsphere-backend-763i.onrender.com/auth/register", {
         username,
         password,
       });

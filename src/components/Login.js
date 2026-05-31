@@ -7,7 +7,7 @@ const Login = ({ setUser }) => {
 
   const handleLogin = async () => {
     try {
-      const { data } = await axios.post("https://chat-sphere-backend.vercel.app/auth/login", {
+      const { data } = await axios.post("https://chatsphere-backend-763i.onrender.com/auth/login", {
         username,
         password,
       });
