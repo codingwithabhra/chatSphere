@@ -20,7 +20,7 @@ export const Chat = ({ user }) => {
     // Fetch all users excluding the current user
     const fetchUsers = async () => {
       try {
-        const { data } = await axios.get("https://chatsphere-backend-763i.onrender.com/", {
+        const { data } = await axios.get("https://chatsphere-backend-763i.onrender.com/users", {
           params: { currentUser: user.username },
         });
         setUsers(data);
